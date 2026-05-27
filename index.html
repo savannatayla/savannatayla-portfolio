@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savanna Tayla | Cinematic Website Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <a href="#top" class="brand">Savanna Tayla</a>
+
+  <nav aria-label="Primary navigation">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-mist hero-mist-one" aria-hidden="true"></div>
+    <div class="hero-mist hero-mist-two" aria-hidden="true"></div>
+    <div class="hero-atmosphere" aria-hidden="true"></div>
+
+    <div class="hero-layout">
+      <div class="hero-content reveal">
+        <p class="small-text">CINEMATIC DIGITAL EXPERIENCES</p>
+        <h1 id="hero-title">I design websites that feel like little worlds.</h1>
+        <p class="hero-description" id="hero-description">
+          Choose a feeling below and watch the direction shift. Every site starts with atmosphere, then becomes a clear path for people to explore, connect, and take action.
+        </p>
+
+        <div class="hero-mood-selector" aria-label="Choose a website mood">
+          <button class="mood-btn active" type="button" data-mood="cinematic">Cinematic</button>
+          <button class="mood-btn" type="button" data-mood="luxury">Luxury</button>
+          <button class="mood-btn" type="button" data-mood="cozy">Cozy</button>
+          <button class="mood-btn" type="button" data-mood="bold">Bold</button>
+        </div>
+
+        <div class="feeling-panel">
+          <p class="feeling-label">WHAT SHOULD YOUR SITE FEEL LIKE?</p>
+          <p id="feeling-copy">Cinematic - layered visuals, dramatic pacing, and a first impression that feels like an opening scene.</p>
+        </div>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="primary-btn magnetic">View Work</a>
+          <a href="#contact" class="secondary-btn magnetic">Start a Project</a>
+        </div>
+      </div>
+
+      <aside class="hero-projects reveal" aria-label="Featured project previews">
+        <a href="ivory-claw.html" class="hero-project-card active" data-preview="luxury">
+          <img src="images/ivory1.jpg" alt="Ivory Claw website preview">
+          <span>Luxury Atelier</span>
+          <strong>Ivory Claw</strong>
+        </a>
+
+        <a href="cedar-fog.html" class="hero-project-card" data-preview="cozy">
+          <img src="images/cedar1.jpg" alt="Cedar and Fog website preview">
+          <span>Atmospheric Cafe</span>
+          <strong>Cedar &amp; Fog</strong>
+        </a>
+
+        <a href="rudeus-grey.html" class="hero-project-card" data-preview="bold">
+          <img src="images/marine1.jpg" alt="Rudeus Grey website preview">
+          <span>Cinematic Portfolio</span>
+          <strong>Rudeus Grey</strong>
+        </a>
+      </aside>
+    </div>
+
+    <a href="#about" class="scroll-indicator">SCROLL</a>
+  </section>
+
+  <section class="section about-section" id="about">
+    <div class="about-grid">
+      <div class="about-image reveal">
+        <img src="images/savanna-about.png" alt="Portrait of Savanna Tayla">
+      </div>
+
+      <div class="about-text reveal">
+        <p class="section-tag">ABOUT</p>
+        <h2>Hi, I’m Savanna.</h2>
+        <p>
+          I’m a creative web designer and digital creative with a passion for building immersive, visually-driven websites that feel memorable, emotional, and uniquely tailored to each brand.
+        </p>
+        <p>
+          I specialize in modern portfolio sites, business websites, and aesthetic digital experiences that blend storytelling with functionality. My style leans toward cinematic visuals, thoughtful interactions, and clean user-focused design.
+        </p>
+        <p>
+          With experience in design, branding, customer communication, and creative problem-solving, I love helping ideas transform into polished online spaces that feel alive and intentional.
+        </p>
+        <p>
+          A lot of my inspiration comes from Pinterest, TikTok, films, television, books, and atmospheric storytelling. I’m drawn to visuals that evoke emotion and create a distinct feeling, and I bring that same energy into every project I design.
+        </p>
+        <p>
+          When I’m not designing, you’ll probably find me reading romance novels, working on creative projects, spending time with my cats Eli and Winsie, or finding inspiration in art, games, and aesthetic media.
+        </p>
+
+        <div class="about-notes">
+          <span>Cinematic websites</span>
+          <span>Story-led branding</span>
+          <span>Thoughtful interactions</span>
+          <span>Emotional visuals</span>
+        </div>
+
+        <p class="about-belief">Good design should feel like something, not just look good.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section-heading projects-heading reveal">
+      <div>
+        <p class="section-tag">FEATURED PROJECTS</p>
+        <h2>Digital worlds with their own atmosphere.</h2>
+      </div>
+      <p class="section-intro">
+        Each project has its own mood, audience, and purpose, from soft luxury to cozy storytelling to bold professional presence.
+      </p>
+    </div>
+
+    <div class="project-grid">
+      <a href="ivory-claw.html" class="project-card project-link reveal" data-tilt>
+        <div class="project-thumb">
+          <img src="images/ivory1.jpg" alt="Ivory Claw website preview">
+          <div class="project-thumb-overlay"><span>View Project</span></div>
+        </div>
+        <div class="project-info">
+          <p class="project-kicker">Luxury Nail Atelier</p>
+          <h3>Ivory Claw</h3>
+          <p>Editorial beauty, soft luxury, and a booking experience that feels like a concierge moment.</p>
+        </div>
+      </a>
+
+      <a href="cedar-fog.html" class="project-card project-link reveal" data-tilt>
+        <div class="project-thumb">
+          <img src="images/cedar1.jpg" alt="Cedar and Fog website preview">
+          <div class="project-thumb-overlay"><span>View Project</span></div>
+        </div>
+        <div class="project-info">
+          <p class="project-kicker">Cafe Concept</p>
+          <h3>Cedar &amp; Fog</h3>
+          <p>A forest cafe website inspired by rain, evening bakery light, jazz, and slow atmosphere.</p>
+        </div>
+      </a>
+
+      <a href="rudeus-grey.html" class="project-card project-link reveal" data-tilt>
+        <div class="project-thumb">
+          <img src="images/marine1.jpg" alt="Rudeus Grey website preview">
+          <div class="project-thumb-overlay"><span>View Project</span></div>
+        </div>
+        <div class="project-info">
+          <p class="project-kicker">Personal Portfolio</p>
+          <h3>Rudeus Grey</h3>
+          <p>A cinematic portfolio for marine engineering experience, credibility, and career presence.</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="section services-section" id="services">
+    <div class="section-heading services-heading reveal">
+      <p class="section-tag">SERVICES</p>
+      <h2>Pick the kind of world you need.</h2>
+    </div>
+
+    <div class="services-grid" role="list">
+      <button class="service-card reveal active" type="button" data-service="website">
+        <img class="service-icon" src="images/web-design-icon.png" alt="" aria-hidden="true">
+        <span class="service-number">01</span>
+        <h3>Website Design</h3>
+        <p>Cinematic, responsive websites designed to feel editorial, memorable, and easy to use.</p>
+      </button>
+
+      <button class="service-card reveal" type="button" data-service="booking">
+        <img class="service-icon" src="images/booking-icon.png" alt="" aria-hidden="true">
+        <span class="service-number">02</span>
+        <h3>Booking Systems</h3>
+        <p>Elegant inquiry and booking flows for salons, cafes, service brands, and creative businesses.</p>
+      </button>
+
+      <button class="service-card reveal" type="button" data-service="brand">
+        <img class="service-icon" src="images/brand-direction-icon.png" alt="" aria-hidden="true">
+        <span class="service-number">03</span>
+        <h3>Brand Direction</h3>
+        <p>Visual direction, tone, palette, and web atmosphere so the whole experience feels connected.</p>
+      </button>
+    </div>
+
+    <div class="service-stage reveal" aria-live="polite">
+      <p class="service-stage-label">SELECTED SERVICE</p>
+      <h3 id="service-title">Website Design</h3>
+      <p id="service-copy">
+        Best for a new online presence or a full redesign. Includes page structure, visual direction, responsive layouts, interaction details, and a polished launch-ready website.
+      </p>
+      <div id="service-tags" class="service-tags">
+        <span>Responsive pages</span>
+        <span>Story-led layout</span>
+        <span>Launch polish</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section section" id="contact">
+    <div class="contact-left reveal">
+      <p class="section-tag">CURRENTLY OPEN</p>
+      <h2>Begin a <span>project.</span></h2>
+      <p>
+        Tell me what you are building, what it should feel like, and where you want people to go next.
+      </p>
+
+      <div class="contact-details">
+        <div>
+          <span>EMAIL</span>
+          <p>savannatayla.design@gmail.com</p>
+        </div>
+        <div>
+          <span>RESPONSE TIME</span>
+          <p>1-3 business days</p>
+        </div>
+        <div>
+          <span>BASED IN</span>
+          <p>South Africa</p>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form-box reveal" id="inquiry-form">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">YOUR NAME</label>
+          <input id="name" name="name" type="text" placeholder="Your name">
+        </div>
+
+        <div class="form-group">
+          <label for="email">EMAIL</label>
+          <input id="email" name="email" type="email" placeholder="you@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="brand">BRAND / PROJECT</label>
+          <input id="brand" name="brand" type="text" placeholder="Your brand">
+        </div>
+
+        <div class="form-group">
+          <label for="social">INSTAGRAM / WEBSITE</label>
+          <input id="social" name="social" type="text" placeholder="@yourbrand">
+        </div>
+      </div>
+
+      <div class="option-section">
+        <span class="section-title">WHAT ARE YOU IMAGINING?</span>
+        <div class="option-buttons" data-choice-group="projectType">
+          <button type="button">Brand Identity</button>
+          <button type="button">Website</button>
+          <button type="button">Booking System</button>
+          <button type="button">Full Ecosystem</button>
+        </div>
+      </div>
+
+      <div class="option-section">
+        <span class="section-title">A LITTLE ABOUT THE PROJECT</span>
+        <div class="form-group">
+          <label class="sr-only" for="message">Project message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your vision, atmosphere, goals, or dream client experience..."></textarea>
+        </div>
+      </div>
+
+      <button class="submit-btn magnetic" type="submit">SEND INQUIRY</button>
+      <p class="form-note" id="form-note">Choose a few options and I will turn this into an email draft for you.</p>
+    </form>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

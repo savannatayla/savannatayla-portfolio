@@ -201,6 +201,8 @@ if (inquiryForm) {
 
     const data = new FormData(inquiryForm);
     const projectType = document.querySelector('[data-choice-group="projectType"] .selected')?.textContent || "Not selected";
+    const timeline = document.querySelector('[data-choice-group="timeline"] .selected')?.textContent || "Not selected";
+    const budget = document.querySelector('[data-choice-group="budget"] .selected')?.textContent || "Not selected";
 
     const subject = encodeURIComponent("New project inquiry");
     const body = encodeURIComponent(
@@ -209,6 +211,8 @@ if (inquiryForm) {
       `Brand / Project: ${data.get("brand") || ""}\n` +
       `Instagram / Website: ${data.get("social") || ""}\n` +
       `Project Type: ${projectType}\n` +
+      `Timeline: ${timeline}\n` +
+      `Budget Feel: ${budget}\n` +
       `Pricing: Case by case\n\n` +
       `Project Notes:\n${data.get("message") || ""}`
     );

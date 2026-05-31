@@ -71,6 +71,11 @@
     object-position: top center;
 }
 
+.gallery-main--contain img {
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.34);
+}
+
 .gallery-thumbs {
     display: grid;
     grid-template-columns: repeat(4, minmax(120px, 1fr));
@@ -103,6 +108,49 @@
     display: block;
     object-fit: cover;
     object-position: top center;
+}
+
+.project-video-section {
+    display: grid;
+    grid-template-columns: 0.48fr 1fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+    margin-bottom: 5rem;
+    padding: clamp(1.4rem, 3vw, 2rem);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    background:
+        linear-gradient(135deg, rgba(125, 149, 129, 0.12), transparent 42%),
+        rgba(255, 255, 255, 0.035);
+    box-shadow: var(--shadow);
+}
+
+.project-video-copy h2 {
+    margin: 1rem 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(2.4rem, 5vw, 4.7rem);
+    font-weight: 600;
+    line-height: 0.95;
+}
+
+.project-video-copy p:not(.section-tag) {
+    max-width: 520px;
+    color: var(--muted);
+    line-height: 1.9;
+}
+
+.project-video-frame {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.project-video-frame video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
 }
 
 .project-page-info {
@@ -156,7 +204,7 @@
     margin-top: 5rem;
 }
 
-.project-feature-grid div {
+.project-feature-grid > div {
     min-height: 230px;
     padding: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -164,6 +212,32 @@
     background:
         linear-gradient(135deg, rgba(201, 151, 99, 0.1), transparent 44%),
         rgba(255, 255, 255, 0.04);
+}
+
+.feature-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1.35rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold);
+    border: 1px solid rgba(201, 151, 99, 0.34);
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 35% 25%, rgba(244, 238, 230, 0.14), transparent 42%),
+        rgba(201, 151, 99, 0.1);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.feature-icon svg {
+    width: 1.35rem;
+    height: 1.35rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .project-feature-grid h3 {
@@ -202,7 +276,8 @@
     }
 
     .project-page-info,
-    .project-feature-grid {
+    .project-feature-grid,
+    .project-video-section {
         grid-template-columns: 1fr;
     }
 

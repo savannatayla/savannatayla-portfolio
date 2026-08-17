@@ -33,12 +33,12 @@
 }
 
 .project-page-header h1 {
-    margin: 1.1rem 0 1rem;
+    margin: 1.1rem 0 1.45rem;
     color: var(--cream);
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(4.6rem, 11vw, 10rem);
     font-weight: 500;
-    line-height: 0.82;
+    line-height: 0.95;
 }
 
 .project-page-subtitle {
@@ -74,6 +74,12 @@
 .gallery-main--contain img {
     object-fit: contain;
     background: rgba(0, 0, 0, 0.34);
+}
+
+.project-thumb--contain img {
+    object-fit: contain;
+    padding: 0.45rem;
+    background: rgba(244, 238, 230, 0.96);
 }
 
 .gallery-thumbs {

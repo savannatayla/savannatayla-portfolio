@@ -100,8 +100,10 @@
 }
 
 .gallery-main--contain img {
+    height: auto;
+    max-height: min(74vh, 760px);
     object-fit: contain;
-    background: rgba(0, 0, 0, 0.34);
+    background: rgba(0, 0, 0, 0.18);
 }
 
 .project-thumb--contain img {
@@ -346,6 +348,10 @@
 
     .gallery-main img {
         height: 380px;
+    }
+
+    .gallery-main--contain img {
+        height: auto;
     }
 
     .gallery-thumbs {

@@ -350,6 +350,10 @@
         min-height: 260px;
     }
 
+    .gallery-main--contain {
+        min-height: 0;
+    }
+
     .gallery-main img {
         height: 380px;
     }

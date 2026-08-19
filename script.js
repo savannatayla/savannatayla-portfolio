@@ -90,6 +90,38 @@ if (hero) {
   });
 }
 
+document.querySelectorAll(".hero-showcase").forEach((showcase) => {
+  const track = showcase.querySelector(".showcase-track");
+  const slides = [...showcase.querySelectorAll(".showcase-slide")];
+  const dots = [...showcase.querySelectorAll(".showcase-dots span")];
+  const controls = showcase.querySelectorAll("[data-showcase-direction]");
+  if (!track || slides.length === 0) return;
+
+  function getCurrentIndex() {
+    return Math.round(track.scrollLeft / track.clientWidth);
+  }
+
+  function updateShowcaseState() {
+    const currentIndex = Math.max(0, Math.min(slides.length - 1, getCurrentIndex()));
+    dots.forEach((dot, index) => dot.classList.toggle("active", index === currentIndex));
+  }
+
+  controls.forEach((button) => {
+    button.addEventListener("click", () => {
+      const direction = Number(button.dataset.showcaseDirection);
+      const nextIndex = (getCurrentIndex() + direction + slides.length) % slides.length;
+      track.scrollTo({
+        left: nextIndex * track.clientWidth,
+        behavior: "smooth"
+      });
+    });
+  });
+
+  track.addEventListener("scroll", updateShowcaseState, { passive: true });
+  window.addEventListener("resize", updateShowcaseState);
+  updateShowcaseState();
+});
+
 document.querySelectorAll("[data-tilt]").forEach((card) => {
   card.addEventListener("mousemove", (event) => {
     const rect = card.getBoundingClientRect();

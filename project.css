@@ -91,6 +91,10 @@
     box-shadow: var(--shadow);
 }
 
+.gallery-main--contain {
+    min-height: 0;
+}
+
 .gallery-main img {
     width: 100%;
     height: min(74vh, 760px);

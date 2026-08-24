@@ -729,20 +729,19 @@ nav a.active {
 
 .site-footer {
     display: flex;
-    justify-content: center;
-    padding: 1.5rem 8% 3rem;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.9rem 2rem;
+    padding: 2rem 8%;
+    color: rgba(244, 238, 230, 0.48);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(5, 8, 7, 0.72);
+    font-size: 0.84rem;
+    line-height: 1.7;
 }
 
-.footer-signature {
-    display: inline-flex;
-    width: 2rem;
-    color: rgba(201, 151, 99, 0.36);
-}
-
-.footer-signature svg {
-    width: 100%;
-    height: auto;
-    fill: currentColor;
+.site-footer p {
+    max-width: 620px;
 }
 
 .project-grid {

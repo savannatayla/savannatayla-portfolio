@@ -382,12 +382,12 @@
       <div class="form-grid">
         <div class="form-group">
           <label for="name">YOUR NAME</label>
-          <input id="name" name="name" type="text" placeholder="Your name">
+          <input id="name" name="name" type="text" placeholder="Your name" required>
         </div>
 
         <div class="form-group">
           <label for="email">EMAIL</label>
-          <input id="email" name="email" type="email" placeholder="you@email.com">
+          <input id="email" name="email" type="email" placeholder="you@email.com" required>
         </div>
 
         <div class="form-group">
@@ -434,7 +434,7 @@
         <span class="section-title">A LITTLE ABOUT THE PROJECT</span>
         <div class="form-group">
           <label class="sr-only" for="message">Project message</label>
-          <textarea id="message" name="message" placeholder="Tell me about your vision, atmosphere, goals, or dream client experience..."></textarea>
+          <textarea id="message" name="message" placeholder="Tell me about your vision, atmosphere, goals, or dream client experience..." required></textarea>
         </div>
       </div>
 
@@ -444,15 +444,10 @@
           <label class="sr-only" for="inspo">Inspiration links or notes</label>
           <textarea id="inspo" name="inspo" class="inspo-textarea" placeholder="Paste Pinterest boards, websites, Instagram links, colours, styles, or anything that feels close to the direction you like..."></textarea>
         </div>
-        <div class="form-group file-group">
-          <label for="inspo-files">ADD INSPO PICTURES</label>
-          <input id="inspo-files" name="inspoFiles" type="file" accept="image/*" multiple>
-          <p class="field-note">Your email app may ask you to attach these pictures manually after the draft opens.</p>
-        </div>
       </div>
 
-      <button class="submit-btn magnetic" type="submit">OPEN EMAIL DRAFT</button>
-      <p class="form-note" id="form-note">Choose a few options and I will turn this into an email draft for you. Inspiration pictures cannot attach automatically, but their file names will be added as a reminder.</p>
+      <button class="submit-btn magnetic" type="submit">SEND INQUIRY</button>
+      <p class="form-note" id="form-note">Send your inquiry here and it will arrive directly in my inbox.</p>
     </form>
   </section>
 </main>

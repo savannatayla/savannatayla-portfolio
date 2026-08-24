@@ -163,7 +163,7 @@ document.querySelectorAll(".option-buttons").forEach((group) => {
 const inquiryForm = document.getElementById("inquiry-form");
 
 if (inquiryForm) {
-  inquiryForm.addEventListener("submit", (event) => {
+  inquiryForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const data = new FormData(inquiryForm);
@@ -171,32 +171,63 @@ if (inquiryForm) {
     const timeline = document.querySelector('[data-choice-group="timeline"] .selected')?.textContent || "Not selected";
     const budget = document.querySelector('[data-choice-group="budget"] .selected')?.textContent || "Not selected";
     const formNote = document.getElementById("form-note");
-    const selectedFiles = Array.from(document.getElementById("inspo-files")?.files || []);
-    const inspoFiles = selectedFiles
-      .map((file) => file.name)
-      .join(", ") || "None selected";
+    const submitButton = inquiryForm.querySelector('[type="submit"]');
 
-    const subject = encodeURIComponent("New project inquiry");
-    const body = encodeURIComponent(
-      `Name: ${data.get("name") || ""}\n` +
-      `Email: ${data.get("email") || ""}\n` +
-      `Brand / Project: ${data.get("brand") || ""}\n` +
-      `Instagram / Website: ${data.get("social") || ""}\n` +
-      `Project Type: ${projectType}\n` +
-      `Timeline: ${timeline}\n` +
-      `Budget Feel: ${budget}\n` +
-      `Pricing: Case by case\n\n` +
-      `Project Notes:\n${data.get("message") || ""}\n\n` +
-      `Inspiration Links / Notes:\n${data.get("inspo") || ""}\n\n` +
-      `Inspiration Image Files Selected:\n${inspoFiles}\n` +
-      `Reminder: Please attach any selected inspiration pictures before sending this email.`
-    );
+    const payload = {
+      _subject: "New project inquiry from savannatayla.com",
+      _template: "table",
+      _captcha: "false",
+      name: data.get("name") || "",
+      email: data.get("email") || "",
+      brand_project: data.get("brand") || "",
+      instagram_website: data.get("social") || "",
+      project_type: projectType,
+      timeline,
+      budget_feel: budget,
+      pricing: "Case by case",
+      project_notes: data.get("message") || "",
+      inspiration_links_notes: data.get("inspo") || ""
+    };
 
     if (formNote) {
-      formNote.textContent = "Opening your email app. If it does not open, email savannatayla.design@gmail.com directly and attach any inspiration pictures there.";
+      formNote.textContent = "Sending your inquiry...";
     }
 
-    window.location.assign(`mailto:savannatayla.design@gmail.com?subject=${subject}&body=${body}`);
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "SENDING...";
+    }
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/savannatayla.design@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error("Inquiry failed to send");
+      }
+
+      inquiryForm.reset();
+      document.querySelectorAll(".option-buttons .selected").forEach((button) => button.classList.remove("selected"));
+
+      if (formNote) {
+        formNote.textContent = "Thank you. Your inquiry has been sent and I will reply within 1-3 business days.";
+      }
+    } catch (error) {
+      if (formNote) {
+        formNote.textContent = "Something went wrong. Please email savannatayla.design@gmail.com directly.";
+      }
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "SEND INQUIRY";
+      }
+    }
   });
 }
 

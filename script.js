@@ -171,10 +171,6 @@ if (inquiryForm) {
     const timeline = document.querySelector('[data-choice-group="timeline"] .selected')?.textContent || "Not selected";
     const budget = document.querySelector('[data-choice-group="budget"] .selected')?.textContent || "Not selected";
     const formNote = document.getElementById("form-note");
-    const selectedFiles = Array.from(document.getElementById("inspo-files")?.files || []);
-    const inspoFiles = selectedFiles
-      .map((file) => file.name)
-      .join(", ") || "None selected";
 
     const subject = encodeURIComponent("New project inquiry");
     const body = encodeURIComponent(
@@ -187,13 +183,11 @@ if (inquiryForm) {
       `Budget Feel: ${budget}\n` +
       `Pricing: Case by case\n\n` +
       `Project Notes:\n${data.get("message") || ""}\n\n` +
-      `Inspiration Links / Notes:\n${data.get("inspo") || ""}\n\n` +
-      `Inspiration Image Files Selected:\n${inspoFiles}\n` +
-      `Reminder: Please attach any selected inspiration pictures before sending this email.`
+      `Inspiration Links / Notes:\n${data.get("inspo") || ""}`
     );
 
     if (formNote) {
-      formNote.textContent = "Opening your email app. If it does not open, email savannatayla.design@gmail.com directly and attach any inspiration pictures there.";
+      formNote.textContent = "Opening your email app. If it does not open, email savannatayla.design@gmail.com directly.";
     }
 
     window.location.assign(`mailto:savannatayla.design@gmail.com?subject=${subject}&body=${body}`);

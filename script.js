@@ -170,6 +170,9 @@ if (inquiryForm) {
     const projectType = document.querySelector('[data-choice-group="projectType"] .selected')?.textContent || "Not selected";
     const timeline = document.querySelector('[data-choice-group="timeline"] .selected')?.textContent || "Not selected";
     const budget = document.querySelector('[data-choice-group="budget"] .selected')?.textContent || "Not selected";
+    const inspoFiles = [...(document.getElementById("inspo-files")?.files || [])]
+      .map((file) => file.name)
+      .join(", ") || "None selected";
 
     const subject = encodeURIComponent("New project inquiry");
     const body = encodeURIComponent(
@@ -181,7 +184,10 @@ if (inquiryForm) {
       `Timeline: ${timeline}\n` +
       `Budget Feel: ${budget}\n` +
       `Pricing: Case by case\n\n` +
-      `Project Notes:\n${data.get("message") || ""}`
+      `Project Notes:\n${data.get("message") || ""}\n\n` +
+      `Inspiration Links / Notes:\n${data.get("inspo") || ""}\n\n` +
+      `Inspiration Image Files Selected:\n${inspoFiles}\n` +
+      `Reminder: Please attach any selected inspiration pictures before sending this email.`
     );
 
     window.location.href = `mailto:savannatayla.design@gmail.com?subject=${subject}&body=${body}`;
